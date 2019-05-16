@@ -1,0 +1,91 @@
+
+buildscript {
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE'
+    }
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
+}
+
+
+apply plugin: 'spring-boot'
+
+ext {
+    dbUrl = "jdbc:postgresql://localhost:5432/cloud_api_db"
+    ext.dbUser = "cloud_api"
+    ext.dbPassword = "cloud-api-pwd"
+}
+
+dependencies {
+
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.9.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb:2.1.2.RELEASE")
+    compile("org.springframework.security.oauth:spring-security-oauth2:2.2.1.RELEASE")
+    compile("ch.qos.logback:logback-core:1.1.7")
+    compile("ch.qos.logback:logback-classic:1.1.7")
+    compile("org.codehaus.janino:janino:2.7.8")
+    compile("org.apache.commons:commons-lang3:3.0")
+
+    testCompile("org.springframework.boot:spring-boot-starter-test:1.5.9.RELEASE")
+    testCompile("org.springframework.security:spring-security-test:4.2.2.RELEASE")
+    testCompile("org.spockframework:spock-core:1.1-groovy-2.4-rc-3")
+    testCompile("org.spockframework:spock-spring:1.1-groovy-2.4-rc-3")
+    testCompile("cglib:cglib:3.2.5")
+    testCompile("org.objenesis:objenesis:2.5.1")
+
+}
+
+jar {
+    baseName 'cloud-api'
+    destinationDir = new File("${rootDir}/out/build/${project.name}/")
+    archiveName = "cloud-api.jar"
+    manifest {
+        attributes(
+                'Implementation-Version': promoSiteVersion,
+                'Implementation-Vendor': 'ES'
+        )
+    }
+}
+
+springBoot {
+    layout = 'ZIP'
+}
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+}
+
+idea {
+    project {
+        jdkName = '1.8'
+        languageLevel = JavaVersion.VERSION_1_8
+    }
+    module {
+        downloadJavadoc = false
+        downloadSources = false
+        inheritOutputDirs = true
+        excludeDirs += file('gradle')
+        excludeDirs += file('out')
+        excludeDirs += file("src/main/webapp/resources/esl_source/node_modules")
+    }
+}
+
+

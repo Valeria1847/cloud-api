@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) Extended System - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ *
+ * Written by Extended System team (https://ext-system.com), 2015
+ */
+plugins {
+    id "org.flywaydb.flyway" version "4.0.3"
+}
+
+flyway {
+    url = dbUrl
+    user = dbUser
+    password = dbPassword
+    cleanDisabled = false
+    placeholderPrefix = '__esph{'
+    placeholderSuffix = '}'
+}
+
+dependencies {
+
+    compile("org.hibernate:hibernate-validator:5.2.4.Final")
+    compile("org.hibernate:hibernate-entitymanager:5.1.7.Final")
+    compile("org.hibernate:hibernate-core:5.1.7.Final")
+    compile("javax.el:javax.el-api:3.0.0")
+
+    testCompile("org.postgresql:postgresql:9.4.1211.jre7")
+}
+
+jar {
+    baseName 'cloud-api-db'
+}
