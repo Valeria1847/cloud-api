@@ -7,7 +7,6 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.security.auth.message.config.AuthConfigFactory;
@@ -21,7 +20,6 @@ import javax.security.auth.message.config.AuthConfigFactory;
 @EnableCaching
 @EnableScheduling
 @EnableAsync
-@EnableGlobalMethodSecurity(securedEnabled = true)
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
