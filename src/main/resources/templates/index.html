@@ -1,11 +1,26 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Cloud-api</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+
 </head>
 <body>
-<p th:text="'Hello!'" />
+<header>
+    <div id="about">
+        <a th:href="@{/index.html}">Home</a>
+        <a href="#">Sign In</a>
+        <a href="#">Info</a>
+    </div>
+</header>
+<div th:fragment="top">
+    <div id="banner">
+        <h2>Cloud-api</h2>
+        <a th:href="@{/login}">Sign In</a>
+    </div>
+</div>
 </body>
 </html>
 

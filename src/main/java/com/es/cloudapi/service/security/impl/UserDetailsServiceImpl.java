@@ -1,17 +1,17 @@
-package com.es.cloudapi.service.security.impl;
-
-import com.es.cloudapi.service.security.SecurityPerson;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
-
-@Service
-public class UserDetailsServiceImpl implements UserDetailsService {
-
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new SecurityPerson();
-    }
-
-}
+//package com.es.cloudapi.service.security.impl;
+//
+//import com.es.cloudapi.service.security.SecurityPerson;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
+//import org.springframework.stereotype.Service;
+//
+//@Service
+//public class UserDetailsServiceImpl implements UserDetailsService {
+//
+//    @Override
+//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//        return new SecurityPerson();
+//    }
+//
+//}

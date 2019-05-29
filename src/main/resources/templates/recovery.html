@@ -16,10 +16,10 @@
 <div class="container">
     <div class="row" style="margin-top:20px" >
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-            <form th:action="@{/login}" method="post" id="form">
+            <form th:action="@{/recovery}" method="post" id="form">
                 <fieldset>
                     <legend class="ram">
-                    <h1>Please Sign In</h1>
+                        <h1>Password recovery</h1>
                         <span class="kagkopam"></span>
                     </legend>
                     <div class="form-group">
@@ -28,25 +28,19 @@
                                placeholder="UserName" required="true" autofocus="true"/>
                     </div>
                     <div class="form-group">
-                        <h5>Password</h5>
-                        <input type="password" name="password" id="password" class="form-control input-lg"
-                               placeholder="Password" required="true"/>
-                    </div>
-                    <div class="password">
-                        <a th:href="@{/recovery}">Forget your password?</a>
-                    </div>
-                    <div clacc="registr">
-                        <a th:href="@{/registration}">Registration</a>
+                        <h5>E-mail</h5>
+                        <input type="text" name="mail" id="mail" class="form-control input-lg"
+                               placeholder="mail" required="true"/>
                     </div>
 
                     <div class="button"  onclick="document.getElementById('form').submit();">
                         <div class="col-xs-6 col-sm-6 col-md-6">
-                            Sign In
+                            Recovery
                         </div>
-                        </div>
+                    </div>
                 </fieldset>
             </form>
-    </div>
+        </div>
     </div>
 </div>
 </body>
