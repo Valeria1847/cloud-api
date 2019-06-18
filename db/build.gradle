@@ -25,7 +25,7 @@ dependencies {
     compile("org.hibernate:hibernate-core:5.1.7.Final")
     compile("javax.el:javax.el-api:3.0.0")
 
-    testCompile("org.postgresql:postgresql:9.4.1211.jre7")
+    compile("org.postgresql:postgresql:9.4.1211.jre7")
 }
 
 jar {

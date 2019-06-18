@@ -21,6 +21,7 @@ public class Person {
     private String passwordHash;
     private String surname;
     private String name;
+    private String email;
     private String patronymic;
 
     @Column(name = "incorrect_login_count")
@@ -33,10 +34,16 @@ public class Person {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateAdd;
 
-    public Person(Integer id, boolean active, String login, String name, String surname, String patronymic, String passwordHash, short incorrectLoginCount, boolean blockedPassword, boolean blockedAdmin) {
+
+    public Person() {
+
+    }
+
+    public Person(Integer id, boolean active, String login, String email, String name, String surname, String patronymic, String passwordHash, short incorrectLoginCount, boolean blockedPassword, boolean blockedAdmin) {
         this.id = id;
         this.active = active;
         this.login = login;
+        this.email = email;
         this.name=name;
         this.surname = surname;
         this.patronymic = patronymic;
@@ -68,6 +75,14 @@ public class Person {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPasswordHash() {
@@ -155,6 +170,7 @@ public class Person {
                "id=" + id +
                ", active=" + active +
                ", login='" + login + '\'' +
+               ", mail='" + email + '\'' +
                ", passwordHash='" + passwordHash + '\'' +
                ", surname='" + surname + '\'' +
                ", name='" + name + '\'' +

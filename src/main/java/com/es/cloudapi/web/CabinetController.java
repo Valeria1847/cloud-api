@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class LoginController {
+public class CabinetController {
 
-    @GetMapping(value = "/login")
-    public String getLogin() {
-        return "login";
+    @GetMapping(value = "/cabinet")
+    public String getCabinet() {
+        return "cabinet";
     }
 
 

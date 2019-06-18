@@ -10,6 +10,8 @@ CREATE TABLE person
     name                  VARCHAR(128),
     patronymic            VARCHAR(128),
 
+    email                 VARCHAR(128),
+
     incorrect_login_count SMALLINT     NOT NULL DEFAULT 0,
 
     blocked_password      BOOLEAN      NOT NULL DEFAULT FALSE,
