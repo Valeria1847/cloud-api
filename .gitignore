@@ -13,8 +13,8 @@ build.properties
 es_gulp_version.json
 node_modules/
 bower_components/
-src/main/resources/application-develop.yml
-src/main/resources/static/**/*
+#src/main/resources/application-develop.yml
+#src/main/resources/static/**/*
 logs/
 package-lock.json
 

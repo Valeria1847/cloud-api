@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: develop
+  http:
+    multipart:
+      max-file-size: 250MB
+      max-request-size: 250MB
+  resources:
+    add-mappings: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cloud_api_db
+    username: cloud_api
+    password: cloud-api-pwd
+
+logging:
+  file: logs
+  level:
+
+server:
+  port: 8100
+  contextPath: /
+  error:
+    whitelabel:
+      enabled: false

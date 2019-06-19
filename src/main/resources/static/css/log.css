@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #fafafa;
+    font-family: Trebuchet MS, Helvetica;
+    background-image: url("https://avatars.mds.yandex.net/get-pdb/1646963/a598f165-77b4-47e9-a1f5-647c0ccddf83/s1200?webp=false") ;
+}
+/*Меню*/
+
+header{
+    width: 100%;
+    padding: 10px 0.5% 0px 0.5%;
+    background: transparent;
+    float: left;
+    position:fixed;
+}
+#about {
+    text-align: center;
+    font-size: 1em;
+    line-height: 40px;
+    margin-bottom: 10px;
+    position: fixed;
+}
+
+#about > a {color:#fff}
+
+#about > a:hover {
+    color: #b0b0b0;
+    text-decoration: underline;
+}
+#about >a:not(:last-child){
+    margin-right: 7%;
+}
+/*Вход*/
+.container {
+    width: 100%;
+    background-blend-mode: multiply;
+    background-size: cover;
+    color: #b0b0b0;
+    font-size: 1em;
+    text-align: center;
+    padding: 200px 0px;
+}
+fieldset{
+
+    background-color: #1B1B19;
+    width: 17em;
+    padding-left: 12px;
+    padding-right: 13px;
+    border: 2px solid #797676;
+    margin: 3em auto;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 10px;
+}
+.ram{
+    overflow: hidden;
+    width: 100%;
+    border-color: inherit;
+}
+h1{
+    float: left;
+    margin: 0 3px;
+    font-size: 23px;
+    font-weight: bold;
+    color: #b0b0b0;
+}
+.kagkopam {
+    position: relative;
+    left: 3px;
+
+    display: block;
+    overflow: hidden;
+
+    border-bottom: 2px solid;
+    border-color: inherit;
+    margin: 12px 0 0 0;
+}
+
+.form-group {
+    padding: 1em 0;
+}
+.button{
+    display: inline-block;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .5em 2em;
+    outline: none;
+    border: 2px solid;
+    border-radius: 1px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.password{
+    color: #b0b0b0;
+}
+.registr{
+    color: #b0b0b0;
+}
