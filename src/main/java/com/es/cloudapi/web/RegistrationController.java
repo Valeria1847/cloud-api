@@ -28,10 +28,10 @@ public class RegistrationController {
     public String postRegistration(@RequestParam String username, @RequestParam String surname, @RequestParam String login,
                                    @RequestParam String mail,@RequestParam String password,@RequestParam String password2) {
 
-        //TODO делать проверку что пароли сопадают, иначе показать ошибку пользователю
+
 
         if(password == null || !password.equals(password2)) {
-            //добавить ошибку через flash атрибуты
+
             return "redirect:registration";
         } else {
             personService.register(username, surname, login, mail, password);
