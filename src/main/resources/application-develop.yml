@@ -5,6 +5,10 @@ spring:
     multipart:
       max-file-size: 250MB
       max-request-size: 250MB
+  thymeleaf:
+    cache: false
+    templatesRoot: /src/main/resources/templates/
+    mode: HTML5
   resources:
     add-mappings: false
   datasource:
@@ -22,3 +26,6 @@ server:
   error:
     whitelabel:
       enabled: false
+
+project:
+  root: .
