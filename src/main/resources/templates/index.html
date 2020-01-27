@@ -8,19 +8,62 @@
 
 </head>
 <body>
+<div class="baner">
 <header>
-    <div id="about">
-        <a th:href="@{/index.html}">Home</a>
-        <a th:href="@{/login}">Sign In</a>
-        <a href="#">Info</a>
+    <div class="about">
+        <nav>
+            <ul>
+                <li> <a th:href="@{/index.html}">Home</a></li>
+                <li><a th:href="@{/login}">Sign In</a></li>
+                <li><a href="#">Info</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
-<div th:fragment="top">
-    <div id="banner">
+<div class="main">
         <h2>Cloud-api</h2>
-        <a th:href="@{/login}">Sign In</a>
+</div>
+</div>
+<div class="container">
+    <div class="row" style="margin-top:20px" >
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form th:action="@{/login}" method="post" id="form">
+                <fieldset class="sign">
+                    <legend class="ram">
+                        <h1>Please Sign In</h1>
+                        <span class="kagkopam"></span>
+                    </legend>
+                    <div class="form-group">
+                        <h5>Login</h5>
+                        <input type="text" name="username" id="username" class="form-control input-lg"
+                               placeholder="UserName" required="true" autofocus="true"/>
+                    </div>
+                    <div class="form-group">
+                        <h5>Password</h5>
+                        <input type="password" name="password" id="password" class="form-control input-lg"
+                               placeholder="Password" required="true"/>
+                    </div>
+                    <div class="password">
+                        <a th:href="@{/recovery}">Forget your password?</a>
+                    </div>
+                    <div clacc="registr">
+                        <a th:href="@{/registration}">Registration</a>
+                    </div>
+
+                    <div class="button"  onclick="document.getElementById('form').submit();">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            Sign In
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
 </div>
+<footer>
+    <div class="foot">
+    </div>
+</footer>
 </body>
 </html>
 

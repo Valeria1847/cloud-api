@@ -21,7 +21,8 @@ import javax.security.auth.message.config.AuthConfigFactory;
 @EnableCaching
 @EnableScheduling
 @EnableAsync
-public class Application extends SpringBootServletInitializer {
+public class
+Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         if (AuthConfigFactory.getFactory() == null) {

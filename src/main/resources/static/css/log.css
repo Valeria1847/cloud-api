@@ -1,42 +1,61 @@
 *{
-    margin: 0;
-    padding: 0;
-    outline: none;
+    margin: 0; /*Отступ от внешней границы*/
+    padding: 0; /*Внутренние отступы*/
 }
 body,html{
-    width: 100%;
-    height: 100%;
+    width: 100%;/*Ширина*/
+    height: 100%; /*Высота*/
 }
 body {
-    background-color: #fafafa;
-    font-family: Trebuchet MS, Helvetica;
-    background-image: url("https://avatars.mds.yandex.net/get-pdb/1646963/a598f165-77b4-47e9-a1f5-647c0ccddf83/s1200?webp=false") ;
+    background-color: #EEEEE6;
+    font-family: 'Inconsolata', monospace;
 }
 /*Меню*/
-
-header{
+.about {
+    width: 75%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+nav {
+    float: right; /*Выравнивание*/
+}
+ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-right: 5px;
+    font-size: x-large;
+}
+a {
+    text-decoration: none;
+}
+.about:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.about {
+    width: 75%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.baner {
     width: 100%;
-    padding: 10px 0.5% 0px 0.5%;
-    background: transparent;
-    float: left;
-    position:fixed;
-}
-#about {
+    background-image: url("https://moika78.ru/news2/2019/07/81767_BaltphotoValentin_Egorshin-9.jpg")  ;
+    background-blend-mode: darken;
+    background-color: rgba(0,0,0,.7);
+    background-size: cover;
+    color: white;
+    font-size: 3em;
     text-align: center;
-    font-size: 1em;
-    line-height: 40px;
-    margin-bottom: 10px;
-    position: fixed;
+    padding: 100px 0px;
+    opacity: 0.75;
 }
 
-#about > a {color:#fff}
-
-#about > a:hover {
-    color: #b0b0b0;
-    text-decoration: underline;
-}
-#about >a:not(:last-child){
-    margin-right: 7%;
+a {
+    color: #DCDCDC;
 }
 /*Вход*/
 .container {
