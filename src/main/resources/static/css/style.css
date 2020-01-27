@@ -12,9 +12,10 @@ body {
 }
 /*Меню*/
 .about {
-    width: 75%;
+    width: 100%;
     padding: 0 15px;
     margin: 0 auto;
+    outline: none;
 }
 nav {
     float: right; /*Выравнивание*/
@@ -83,7 +84,7 @@ a {
     line-height: 1.5;
     color: #666666;
     display: block;
-    width: 100%;
+    width: 70%;
     background: #e6e6e6;
     height: 50px;
     border-radius: 25px;
