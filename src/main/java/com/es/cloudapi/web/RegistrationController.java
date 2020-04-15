@@ -25,8 +25,8 @@ public class RegistrationController {
 
 
     @PostMapping(value = "/registration")
-    public String postRegistration(@RequestParam String username, @RequestParam String surname, @RequestParam String login,
-                                   @RequestParam String mail,@RequestParam String password,@RequestParam String password2) {
+    public String postRegistration(@RequestParam String name, @RequestParam String surname, @RequestParam String login,
+                                   @RequestParam String email,@RequestParam String password,@RequestParam String password2) {
 
 
 
@@ -34,7 +34,7 @@ public class RegistrationController {
 
             return "redirect:registration";
         } else {
-            personService.register(username, surname, login, mail, password);
+            personService.register(name, surname, login, email, password);
             return "redirect:registr";
         }
 

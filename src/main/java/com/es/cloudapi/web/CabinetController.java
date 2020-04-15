@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CabinetController {
 
     @GetMapping(value = "/cabinet")
-    public String getCabinet() {
+    public String getLogin() {
         return "cabinet";
     }
-
 
 }

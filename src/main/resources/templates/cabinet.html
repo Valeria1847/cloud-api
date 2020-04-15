@@ -6,14 +6,20 @@
     <title>Cabinet</title>
 </head>
 <body>
-<header>
-    <div id="about">
-        <a th:href="@{/}">Home</a>
-        <a th:href="@{/login}">Sign In</a>
-        <a href="#">Info</a>
+<div class="container">
+    <div class="header">
+        <h2>Cloud-api</h2>
     </div>
-</header>
+<div class="menu">
+    <ul>
+        <li><a th:href="@{/request.html}">Запросы</a></li>
+        <li><a href="#">Настройки</a></li>
+        <li><a th:href="@{/...}">Выход</a></li>
+    </ul>
+</div>
+    <div class="content">
 
-
+    </div>
+</div>
 </body>
 </html>
