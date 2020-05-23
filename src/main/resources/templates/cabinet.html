@@ -3,18 +3,19 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" th:href="@{/css/cabinet.css}"/>
-    <title>Cabinet</title>
+    <title>Запросы</title>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h2>Cloud-api</h2>
+        <h2>Запросы</h2>
     </div>
 <div class="menu">
     <ul>
-        <li><a th:href="@{/request.html}">Запросы</a></li>
-        <li><a href="#">Настройки</a></li>
-        <li><a th:href="@{/...}">Выход</a></li>
+        <li><a th:href="@{/}">Главная</a></li>
+        <li><a th:href="@{/cabinet}" class="active">Запросы</a></li>
+        <li><a th:href="@{/settings}">Настройки</a></li>
+        <li><a th:href="@{/logout}">Выход</a></li>
     </ul>
 </div>
     <div class="content">

@@ -1,0 +1,75 @@
+<!--
+  ~ Copyright (c) E-System LLC - All Rights Reserved
+  ~ Unauthorized copying of this file, via any medium is strictly prohibited
+  ~ Proprietary and confidential
+  ~
+  ~ Written by E-System team (https://ext-system.com), 2020
+  -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/cabinet.css}"/>
+    <title>Настройки</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>Настройки</h2>
+    </div>
+<div class="menu">
+    <ul>
+        <li><a th:href="@{/}">Главная</a></li>
+        <li><a th:href="@{/cabinet}">Запросы</a></li>
+        <li><a th:href="@{/settings}" class="active">Настройки</a></li>
+        <li><a th:href="@{/logout}">Выход</a></li>
+    </ul>
+</div>
+    <div class="content">
+        <form th:action="@{/settings}" method="POST" class="login-form">
+
+            <div th:if="${!#lists.isEmpty(messages)}"
+                 th:text="${messages.get(0)}"
+                 class="message message--success">
+            </div>
+            <div th:if="${!#lists.isEmpty(errors)}"
+                 th:text="${errors.get(0)}"
+                 class="message message--error">
+            </div>
+
+            <span class="label">Имя</span>
+            <div class="input" data-validate = "Valid email is required: ex@abc.xyz">
+                <input class="input100" type="text" name="name" th:value="${person.name}">
+            </div>
+            <span class="label">Фамилия</span>
+            <div class="input" data-validate="Password is required">
+                <input class="input100" type="password" name="surname" th:value="${person.surname}">
+            </div>
+            <span class="label">Логин</span>
+            <div class="input" data-validate = "Valid email is required: ex@abc.xyz">
+                <input class="input100" type="text" name="login" th:value="${person.login}">
+            </div>
+            <span class="label">Email</span>
+            <div class="input" data-validate = "Valid email is required: ex@abc.xyz">
+                <input class="input100" type="text" name="email" th:value="${person.email}">
+            </div>
+            <span class="label">Пароль</span>
+            <div class="input" name="password">
+                <input class="input100" type="password" name="password">
+            </div>
+            <span class="label">Поворите пароль</span>
+            <div class="input" data-validate="Password is required">
+                <input class="input100" type="password" name="password2">
+            </div>
+
+            <div class="container-btn">
+                <button class="login-btn">
+                    Сохранить
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

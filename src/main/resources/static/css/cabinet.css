@@ -82,6 +82,12 @@ li{
     background: #685F63;
     color:#fff;
 }
+
+.menu li a.active{
+    background: #584F53;
+    color:#fff;
+}
+
 .content{
     height: 600px;
     float: right;
