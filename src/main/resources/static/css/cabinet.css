@@ -93,3 +93,7 @@ li{
     float: right;
     width: 1430px;
 }
+
+table td, table th {
+    border: 1px solid #000;
+}

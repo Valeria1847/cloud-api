@@ -27,16 +27,16 @@
     </ul>
 </div>
     <div class="content">
-        <form th:action="@{/settings}" method="POST" class="login-form">
+        <div th:if="${!#lists.isEmpty(messages)}"
+             th:text="${messages.get(0)}"
+             class="message message--success">
+        </div>
+        <div th:if="${!#lists.isEmpty(errors)}"
+             th:text="${errors.get(0)}"
+             class="message message--error">
+        </div>
 
-            <div th:if="${!#lists.isEmpty(messages)}"
-                 th:text="${messages.get(0)}"
-                 class="message message--success">
-            </div>
-            <div th:if="${!#lists.isEmpty(errors)}"
-                 th:text="${errors.get(0)}"
-                 class="message message--error">
-            </div>
+        <form th:action="@{/settings}" method="POST" class="login-form">
 
             <span class="label">Имя</span>
             <div class="input" data-validate = "Valid email is required: ex@abc.xyz">

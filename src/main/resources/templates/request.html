@@ -2,24 +2,62 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" th:href="@{/css/request.css}"/>
+    <link rel="stylesheet" th:href="@{/css/cabinet.css}"/>
     <title>Requests</title>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h2>Cloud-api</h2>
+        <h2 th:text="${#httpServletRequest.requestURI.contains('cabinet/add') ? 'Добавить запрос' : 'Изменить запрос'}">
+            Запросы</h2>
     </div>
     <div class="menu">
         <ul>
-            <li class="nav"><a th:href="@{/request.html}">Запросы</a></li>
-            <li><a href="#">Настройки</a></li>
-            <li><a th:href="@{/...}">Выход</a></li>
+            <li><a th:href="@{/}">Главная</a></li>
+            <li><a th:href="@{/cabinet}" class="active">Запросы</a></li>
+            <li><a th:href="@{/settings}">Настройки</a></li>
+            <li><a th:href="@{/logout}">Выход</a></li>
         </ul>
     </div>
     <div class="content">
-        <a href="#" class="button">Создать запрос </a>
+        <form method="POST">
+            <span class="label">Активность</span>
+            <div class="input">
+                <input class="input100" type="checkbox" name="active" value="true" th:checked="${active == true}"/>
+            </div>
 
+            <span class="label">Тип</span>
+            <div class="input">
+                <select name="type">
+                    <option value="*" th:selected="${type == '*'}">*</option>
+                    <option value="GET" th:selected="${type == 'GET'}">GET</option>
+                    <option value="POST" th:selected="${type == 'POST'}">POST</option>
+                    <option value="PUT" th:selected="${type == 'PUT'}">PUT</option>
+                    <option value="DELETE" th:selected="${type == 'DELETE'}">DELETE</option>
+                    <option value="OPTIONS" th:selected="${type == 'OPTIONS'}">OPTIONS</option>
+                </select>
+            </div>
+
+            <span class="label">URL</span>
+            <div class="input">
+                <input class="input100" type="text" name="url" th:value="${url}"/>
+            </div>
+
+            <span class="label">HTTP code</span>
+            <div class="input">
+                <input class="input100" type="number" name="code" th:value="${code}"/>
+            </div>
+
+            <span class="label">Body</span>
+            <div class="input">
+                <textarea name="body" th:text="${body}">
+                </textarea>
+            </div>
+
+            <button th:type="submit">
+                Сохранить
+            </button>
+        </form>
     </div>
 </div>
 </body>

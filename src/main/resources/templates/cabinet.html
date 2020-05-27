@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" th:href="@{/css/cabinet.css}"/>
     <title>Запросы</title>
 </head>
@@ -10,16 +10,56 @@
     <div class="header">
         <h2>Запросы</h2>
     </div>
-<div class="menu">
-    <ul>
-        <li><a th:href="@{/}">Главная</a></li>
-        <li><a th:href="@{/cabinet}" class="active">Запросы</a></li>
-        <li><a th:href="@{/settings}">Настройки</a></li>
-        <li><a th:href="@{/logout}">Выход</a></li>
-    </ul>
-</div>
+    <div class="menu">
+        <ul>
+            <li><a th:href="@{/}">Главная</a></li>
+            <li><a th:href="@{/cabinet}" class="active">Запросы</a></li>
+            <li><a th:href="@{/settings}">Настройки</a></li>
+            <li><a th:href="@{/logout}">Выход</a></li>
+        </ul>
+    </div>
     <div class="content">
-
+        <div th:if="${!#lists.isEmpty(messages)}"
+             th:text="${messages.get(0)}"
+             class="message message--success">
+        </div>
+        <div th:if="${!#lists.isEmpty(errors)}"
+             th:text="${errors.get(0)}"
+             class="message message--error">
+        </div>
+        <form type="GET" th:action="@{/cabinet/add}">
+            <button th:type="submit">Добавить</button>
+        </form>
+        <th:block th:if="${items==null || items.size() == 0}">
+            <h3>Список запросов пуст</h3>
+        </th:block>
+        <th:block th:unless="${items==null || items.size() == 0}">
+            <h3>Список запросов</h3>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Тип</th>
+                    <th>URL</th>
+                    <th>HTTP code</th>
+                    <th>Дата добавления</th>
+                </tr>
+                <tr th:each="item : ${items}">
+                    <td>
+                        <form method="GET" th:action="@{/cabinet/{id}(id=${item.id})}">
+                            <button type="submit">Изменить</button>
+                        </form>
+                        <form method="POST" th:action="@{/cabinet/{id}(id=${item.id})}" onsubmit="return confirm('Удалить элемент?')">
+                            <input type="hidden" name="action" value="delete"/>
+                            <button type="submit" >Удалить</button>
+                        </form>
+                    </td>
+                    <td th:text="${item.type}">GET</td>
+                    <td th:text="${item.url}">/test</td>
+                    <td th:text="${item.code}">200</td>
+                    <td th:text="${#dates.format(item.dateAdd, 'dd.MM.yyyy HH:mm')}">25.05.2020 10:45</td>
+                </tr>
+            </table>
+        </th:block>
     </div>
 </div>
 </body>
